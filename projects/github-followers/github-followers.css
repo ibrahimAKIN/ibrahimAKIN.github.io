@@ -2,6 +2,10 @@
     background-color: var(--bg-clr);
 }
 
+.ns {
+    text-align: center;
+}
+
 #root {
     display: grid;
     color: #fff;

@@ -9,7 +9,7 @@
     <title>Github Followers Tracking</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/images/app/logo192.png" />
     <link rel="stylesheet" type="text/css" href="/styles.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/sidenav/sidenav.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/topnav/topnav.css" />
@@ -25,7 +25,7 @@
 <body>
     <top-nav></top-nav>
     <side-nav></side-nav>
-    <div id="root">
+    <main id="root">
         <form onsubmit="handleSubmit(event)">
             <input type="search" placeholder="username" lang-tag="username" autofocus required>
             <button onclick="newtab = false" title="Search" lang-tag="search"></button>
@@ -43,6 +43,10 @@
                 <span lang-tag="saved">Saved</span>
             </div>
         </div>
+        <noscript class="ns">
+            <style>:root{--n:0}</style>
+            Please enable JavaScript to view the pages completely.
+        </noscript>
         <table style="display: none;">
             <thead>
                 <tr><th colspan="2" lang-tag="diff">Difference</th></tr>
@@ -72,6 +76,6 @@
             </tbody>
         </table>
         <p style="display: none;"></p>
-    </div>
+    </main>
 </body>
 </html>
