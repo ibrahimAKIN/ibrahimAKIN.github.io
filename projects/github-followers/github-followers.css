@@ -22,7 +22,7 @@ form {
     top: 0;
 }
 
-input, textarea, form+div button {
+input, textarea, form~div button {
     padding: 8px;
     background-color: transparent;
     border-color: #fff;
@@ -52,15 +52,19 @@ label {
     user-select: none;
 }
 
-label>input, form+div span {
+label>input, form~div span {
     visibility: hidden;
 }
 
-input:checked+span {
+label:nth-child(4)>input:checked+span {
+    color: #0f0;
+}
+
+label:nth-child(5)>input:checked+span {
     color: #f00;
 }
 
-form+div {
+form~div {
     display: none;
     align-items: center;
     height: fit-content;
@@ -69,7 +73,7 @@ form+div {
     position: relative;
 }
 
-form+div::before {
+form~div::before {
     content: attr(count);
     font-weight: bold;
     font-size: 20px;
@@ -78,22 +82,30 @@ form+div::before {
     position: absolute;
 }
 
+form~div:nth-child(2):before {
+    color: #0f0;
+}
+
+form~div:nth-child(3):before {
+    color: #f00;
+}
+
 textarea {
     width: 400px;
     height: 200px;
 }
 
-form+div>div {
+form~div>div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form+div button {
+form~div button {
     margin: 1rem 15px 0;
 }
 
-form+div span {
+form~div span {
     margin-top: 5px;
 }
 
@@ -144,7 +156,8 @@ button[lang-tag='search'] {
     mask-image: url('/assets/icons/projects/github-followers/search.svg');
 }
 
-button[lang-tag='block'] {
+li button:nth-child(2),
+li button:nth-child(3) {
     background-color: transparent;
     color: #fff;
     border: none;

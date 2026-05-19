@@ -6,11 +6,13 @@ const lang_obj = {
         diff: 'Fark',
         all: 'Tümü',
         block: 'Engel',
+        check: 'Onay',
         followers: 'Takipçiler',
         following: 'Takip Edilenler',
         copy: 'Kopyala',
         copied: 'Kopyalandı',
         blocked: 'Engellenenler Listesini Göster',
+        checked: 'Kontrol Edilenler Listesini Göster',
         save: 'Kaydet',
         saved: 'Kaydedildi'
     },
@@ -21,11 +23,13 @@ const lang_obj = {
         diff: 'Difference',
         all: 'All',
         block: 'Block',
+        check: 'Check',
         followers: 'Followers',
         following: 'Following',
         copy: 'Copy',
         copied: 'Copied',
         blocked: 'Show Blocked List',
+        checked: 'Show Checked List',
         save: 'Save',
         saved: 'Saved'
     }
