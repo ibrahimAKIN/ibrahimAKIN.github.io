@@ -30,16 +30,28 @@
             <input type="search" placeholder="username" lang-tag="username" autofocus required>
             <button onclick="newtab = false" title="Search" lang-tag="search"></button>
             <button onclick="newtab = true" title="Open in New Tab" lang-tag="newtab"></button>
-            <label title="Show Blocked List" lang-tag="blocked"><input onchange="handleChange()" type="checkbox"><span>⨯</span></label>
+            <label title="Show Checked List" lang-tag="checked"><input onchange="handleChange('c')" type="checkbox"><span>✔</span></label>
+            <label title="Show Blocked List" lang-tag="blocked"><input onchange="handleChange('b')" type="checkbox"><span>⨯</span></label>
         </form>
-        <div>
+        <div id="checked">
             <div>
-                <button onclick="handleClick(this, true)" lang-tag="copy">Copy</button>
+                <button onclick="handleClick(this, 'c', true)" lang-tag="copy">Copy</button>
                 <span lang-tag="copied">Copied</span>
             </div>
-            <textarea id="blocked"></textarea>
+            <textarea></textarea>
             <div>
-                <button onclick="handleClick(this)" lang-tag="save">Save</button>
+                <button onclick="handleClick(this, 'c')" lang-tag="save">Save</button>
+                <span lang-tag="saved">Saved</span>
+            </div>
+        </div>
+        <div id="blocked">
+            <div>
+                <button onclick="handleClick(this, 'b', true)" lang-tag="copy">Copy</button>
+                <span lang-tag="copied">Copied</span>
+            </div>
+            <textarea></textarea>
+            <div>
+                <button onclick="handleClick(this, 'b')" lang-tag="save">Save</button>
                 <span lang-tag="saved">Saved</span>
             </div>
         </div>

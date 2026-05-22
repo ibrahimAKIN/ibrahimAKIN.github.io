@@ -1,40 +1,50 @@
-const blocked_e = document.forms[0].nextElementSibling;
-const blocked_t = document.getElementById('blocked');
 const input = document.querySelector('input[type=search]');
 const table = document.getElementsByTagName('table')[0];
 const p = document.getElementsByTagName('p')[0];
-const checkbox = document.forms[0][3];
-let blocked = localStorage.getItem('github_blocked')?.split(',') || [];
-let newtab = false, cur = '';   // current user
+const lcl = { b: 'github_blocked', c: 'github_checked' };
+const cbx = { b: document.forms[0][4], c: document.forms[0][3] };
+const elm = { b: document.getElementById('blocked'), c: document.getElementById('checked') };
+const lst = { b: localStorage.getItem(lcl.b)?.split(',') || [], c: localStorage.getItem(lcl.c)?.split(',') || [] };
+const txt = { b: elm.b.children[1], c: elm.c.children[1] };
+const clr = { b: '#f00', c: '#0f0' };
+let newtab = false, cu = '';   // current user
 
 function display(place, data, type, pre) {
     const ul = document.getElementById(type + '_' + place);
     for (const item of data) {
         const b = document.createElement('button');
         const c = document.createElement('button');
+        const s = document.createElement('button');
         const d = document.createElement('div');
         const img = document.createElement('img');
         const li = document.createElement('li');
         const a = document.createElement('a');
+        b.onclick = e => handleBlock(e, 'b');
+        c.onclick = e => handleBlock(e, 'c');
+        s.onclick = handleSearch;
         img.src = item.avatar_url;
         a.innerText = item.login;
-        b.onclick = handleSearch;
-        c.onclick = handleBlock;
         a.href = item.html_url;
         b.value = item.login;
         c.value = item.login;
+        s.value = item.login;
         img.alt = 'avatar';
         a.target = '_blank';
-        b.title = lang_obj[current]['search'];
-        b.setAttribute('lang-tag', 'search');
-        c.title = lang_obj[current]['block'];
-        c.setAttribute('lang-tag', 'block');
-        if (blocked.includes(item.login)) c.style.color = '#f00';
-        c.innerText = '⨯';
-        b.innerText = '.';
+        b.setAttribute('lang-tag', 'block');
+        c.setAttribute('lang-tag', 'check');
+        s.setAttribute('lang-tag', 'search');
+        b.title = lang_obj[current]['block'];
+        c.title = lang_obj[current]['check'];
+        s.title = lang_obj[current]['search'];
+        if (lst.b.includes(item.login)) b.style.color = clr.b;
+        if (lst.c.includes(item.login)) c.style.color = clr.c;
+        b.innerText = '⨯';
+        c.innerText = '✔';
+        s.innerText = '.';
         a.prepend(img);
-        d.appendChild(b);
+        d.appendChild(s);
         d.appendChild(c);
+        d.appendChild(b);
         li.appendChild(a);
         li.appendChild(d);
         if (pre) ul.prepend(li);
@@ -93,7 +103,7 @@ async function fetchData(user) {
             len = data.length;
             if (key === Object.keys(res)[1]) {
                 for (let j = 0; j < data.length; j++) {
-                    if (blocked.includes(data[j].login)) {
+                    if (lst.b.includes(data[j].login)) {
                         blocked_following.push(data.splice(j, 1)[0]);
                     }
                 }
@@ -122,11 +132,11 @@ async function fetchData(user) {
 }
 
 function setURL(user) {
-    if (cur != user) {
+    if (cu != user) {
         const url = new URL(window.location);
         url.searchParams.set('user', user);
         window.history.pushState({}, '', url);
-        cur = user;
+        cu = user;
     }
 }
 
@@ -138,7 +148,7 @@ function loadPage() {
     if (value) {
         input.value = value;
         fetchData(value);
-        cur = value;
+        cu = value;
     }
 }
 
@@ -150,21 +160,21 @@ function handleSearch(e) {
     setURL(value);
 }
 
-function handleBlock(e) {
+function handleBlock(e, v) {
     const value = e.target.value;
-    const index = blocked.indexOf(value);
+    const index = lst[v].indexOf(value);
     if (index > -1) {
         e.target.removeAttribute('style');
-        blocked.splice(index, 1);
+        lst[v].splice(index, 1);
     }
     else {
-        e.target.style.color = '#f00';
-        blocked.push(value);
+        e.target.style.color = clr[v];
+        lst[v].push(value);
     }
-    blocked_e.setAttribute('count', blocked.length);
-    if (blocked.length < 1) localStorage.removeItem('github_blocked');
-    else localStorage.setItem('github_blocked', blocked);
-    blocked_t.value = blocked;
+    elm[v].setAttribute('count', lst[v].length);
+    if (lst[v].length < 1) localStorage.removeItem(lcl[v]);
+    else localStorage.setItem(lcl[v], lst[v]);
+    txt[v].value = lst[v];
 }
 
 function handleSubmit(e) {
@@ -174,41 +184,45 @@ function handleSubmit(e) {
     fetchData(value);
 }
 
-function handleChange() {
-    if (checkbox.checked) {
-        if (blocked.length > 0) blocked_t.value = blocked;
-        blocked_e.style.display = 'flex';
+function handleChange(v) {
+    if (cbx[v].checked) {
+        if (lst[v].length > 0) txt[v].value = lst[v];
+        elm[v].style.display = 'flex';
     }
     else {
-        blocked_e.removeAttribute('style');
+        elm[v].removeAttribute('style');
     }
 }
 
-function handleClick(e, t) {
+function handleClick(e, v, t) {
     if (t) {
-        blocked_t.select();
+        txt[v].select();
         document.execCommand('copy');
     }
     else {
-        const value = blocked_t.value;
+        const value = txt[v].value;
         if (value.trim()) {
-            localStorage.setItem('github_blocked', value);
-            blocked = value.split(',');
+            localStorage.setItem(lcl[v], value);
+            lst[v] = value.split(',');
         }
         else {
-            localStorage.removeItem('github_blocked');
-            blocked = [];
+            localStorage.removeItem(lcl[v]);
+            lst[v] = [];
         }
-        blocked_e.setAttribute('count', blocked.length);
+        elm[v].setAttribute('count', lst[v].length);
     }
-    const txt = e.nextElementSibling;
-    txt.style.visibility = 'unset';
-    setTimeout(() => txt.removeAttribute('style'), 1000);
+    const text = e.nextElementSibling;
+    text.style.visibility = 'unset';
+    setTimeout(() => text.removeAttribute('style'), 1000);
 }
 
-blocked_e.setAttribute('count', blocked.length);
+elm.b.setAttribute('count', lst.b.length);
 
-window.addEventListener('load', handleChange);
+elm.c.setAttribute('count', lst.c.length);
+
+window.addEventListener('load', () => handleChange('b'));
+
+window.addEventListener('load', () => handleChange('c'));
 
 window.addEventListener('popstate', loadPage);
 
