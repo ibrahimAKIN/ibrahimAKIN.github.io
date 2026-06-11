@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Games</title>
     <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/images/app/logo192.png" />
     <link rel="stylesheet" type="text/css" href="/styles.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/sidenav/sidenav.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/topnav/topnav.css" />
@@ -20,12 +20,13 @@
 <body>
     <top-nav></top-nav>
     <side-nav></side-nav>
+    <noscript class="ns"><style>:root{--n:0}</style></noscript>
     <div class="background">
         <div id="stars1"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
     </div>
-    <div id="root">
+    <main id="root">
         <div id="card-container" class="flex-wrap-anim">
             <div class="card-item">
                 <a href="/games/tetris">
@@ -78,6 +79,6 @@
                 </a>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
