@@ -7,11 +7,12 @@
     <title>Spider Solitaire</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/images/app/logo192.png" />
     <link rel="stylesheet" type="text/css" href="/styles.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/sidenav/sidenav.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/topnav/topnav.css" />
     <link rel="stylesheet" type="text/css" href="/components/navigation/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="/components/noscript/noscript.css" />
     <link rel="stylesheet" type="text/css" href="spider-solitaire.css" />
     <script type="text/javascript" src="lang.js"></script>
     <script type="text/javascript" src="/components/navigation/lang.js"></script>
@@ -23,9 +24,20 @@
 <body>
     <top-nav></top-nav>
     <side-nav></side-nav>
-    <div id="root">
+    <noscript class="ns">
+        <style>:root{--n:0;--d:none}</style>
+        <input type="radio" name="lang" id="tr">
+        <input type="radio" name="lang" id="en" checked>
+        <div>
+            <span class="tr">Bu uygulamayı çalıştırmak için JavaScript'i etkinleştirmeniz gerekiyor.</span>
+            <span class="en">You need to enable JavaScript to run this app.</span><br><br>
+            <a href="/"><span class="tr">Anasayfa</span><span class="en">Homepage</span></a><br><br>
+            <label for="tr" title="Türkçe">TR</label>&emsp;<label for="en" title="English">EN</label>
+        </div>
+    </noscript>
+    <main id="root">
         <h1 lang-tag="spider">🕷️ Spider Solitaire (1 Suit)</h1>
         <div id="board"></div>
         <button id="deal" lang-tag="deal">Deal</button>
-    </div>
+    </main>
 </body>
