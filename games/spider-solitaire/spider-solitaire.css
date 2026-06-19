@@ -4,8 +4,12 @@ body {
     color: #fff;
 }
 
+.ns {
+    --clr: #fff;
+}
+
 #root {
-    display: flex;
+    display: var(--d, flex);
     flex-direction: column;
     padding: 20px;
     text-align: center;
