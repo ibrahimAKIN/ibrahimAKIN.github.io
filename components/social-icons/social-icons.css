@@ -459,9 +459,9 @@
 }
 
 .main>.menu>.expand .filled:hover.filled::before,
-.main .menu.hvr>.pin-menu:hover~.filled::before,
-.main .menu.hvr>.filled:hover.filled::before,
-.main :not(.menu)>.filled:hover.filled::before {
+.main .menu.hvr>.pin-menu:hover+.filled::before,
+.main .menu.hvr>.filled:hover::before,
+.main :not(.menu)>.filled:hover::before {
     background-color: #000;
     transform: scale(1.25) translateY(-5px);
 }
@@ -473,8 +473,8 @@
     color: #000;
 }
 
-#topnav .menu.hvr>.filled:hover.filled::before,
-#topnav :not(.menu) .filled:hover.filled::before {
+#topnav .menu.hvr>.filled:hover::before,
+#topnav :not(.menu) .filled:hover::before {
     transform: scale(1.25);
 }
 
