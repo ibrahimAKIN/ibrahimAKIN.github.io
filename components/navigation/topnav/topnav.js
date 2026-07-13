@@ -88,11 +88,7 @@ class Topnav extends HTMLElement {
                         ${color ?
                             `<div>
                                 <div title="Colors" lang-tag="colors" class="filled color">
-                                    ${(() => {
-                                        let result = '';
-                                        for (const i of colors) result += `<button aria-label="Color" value="${i}" style="--color:${i}"></button>`;
-                                        return result;
-                                    })()}
+                                    ${colors.map(i => `<button aria-label="Color" value="${i}" style="--color:${i}"></button>`).join('')}
                                 </div>
                             </div>` : ''
                         }
