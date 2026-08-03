@@ -5240,4 +5240,34 @@
     "tr": "bayağı, klişe",
     "def": "trite, banal, or mawkishly sentimental.",
     "pos": "adjective"
+}, {
+    "en": "accomplish",
+    "tr": "başarıyla tamamlamak",
+    "def": "achieve or complete successfully.",
+    "pos": "verb"
+}, {
+    "en": "stale",
+    "tr": "bayat",
+    "def": "(of food) no longer fresh and pleasant to eat; hard, musty, or dry.",
+    "pos": "adjective"
+}, {
+    "en": "malevolent",
+    "tr": "kötü niyetli",
+    "def": "having or showing a wish to do evil to others.",
+    "pos": "adjective"
+}, {
+    "en": "occasionally",
+    "tr": "ara sıra",
+    "def": "at infrequent or irregular intervals; now and then.",
+    "pos": "adverb"
+}, {
+    "en": "break up",
+    "tr": "ayrılmak",
+    "def": "the separation or breaking up of something into several pieces or sections.",
+    "pos": "verb"
+}, {
+    "en": "puberty",
+    "tr": "ergenlik",
+    "def": "the period during which adolescents reach sexual maturity and become capable of reproduction.",
+    "pos": "noun"
 }]
