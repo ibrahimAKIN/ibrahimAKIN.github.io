@@ -5276,4 +5276,19 @@
     "img": "/assets/images/projects/language-app/conscription.jpg",
     "def": "compulsory enlistment for state service, typically into the armed forces.",
     "pos": "noun"
+}, {
+    "en": "cellular",
+    "tr": "hücresel",
+    "def": "relating to or consisting of living cells.",
+    "pos": "adjective"
+}, {
+    "en": "clerk",
+    "tr": "katip, tezgâhtar",
+    "def": "a person employed in an office or bank to keep records, accounts, and undertake other routine administrative duties.",
+    "pos": "noun"
+}, {
+    "en": "acquaintance",
+    "tr": "tanıdık",
+    "def": "a person's knowledge or experience of something.",
+    "pos": "noun"
 }]
