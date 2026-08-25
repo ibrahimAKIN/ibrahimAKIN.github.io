@@ -5313,4 +5313,9 @@
 }, {
     "en": "workplace physician",
     "tr": "işyeri hekimi"
+}, {
+    "en": "last resort",
+    "tr": "son çare",
+    "def": "a final course of action, used only when all else has failed.",
+    "pos": "noun"
 }]
