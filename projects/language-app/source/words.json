@@ -5296,4 +5296,26 @@
     "tr": "muhalif",
     "def": "the expression or holding of opinions at variance with those previously, commonly, or officially held.",
     "pos": "noun"
+}, {
+    "en": "ember",
+    "tr": "kor, köz",
+    "def": "a small piece of burning or glowing coal or wood in a dying fire.",
+    "pos": "noun"
+}, {
+    "en": "tap",
+    "tr": "musluk",
+    "img": "/assets/images/projects/language-app/tap.gif",
+    "def": "a device by which a flow of liquid or gas from a pipe or container can be controlled.",
+    "pos": "noun"
+}, {
+    "en": "tire repairman",
+    "tr": "lastik tamircisi"
+}, {
+    "en": "workplace physician",
+    "tr": "işyeri hekimi"
+}, {
+    "en": "last resort",
+    "tr": "son çare",
+    "def": "a final course of action, used only when all else has failed.",
+    "pos": "noun"
 }]
