@@ -5328,4 +5328,10 @@
     "tr": "derin düşünmek",
     "def": "think about (a fact, proposal, or request) deeply and at length.",
     "pos": "verb"
+}, {
+    "en": "cannon",
+    "tr": "top",
+    "img": "/assets/images/projects/language-app/cannon.gif",
+    "def": "a large, heavy piece of artillery, typically mounted on wheels, formerly used in warfare.",
+    "pos": "noun"
 }]
