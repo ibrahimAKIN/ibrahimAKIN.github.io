@@ -5318,4 +5318,20 @@
     "tr": "son çare",
     "def": "a final course of action, used only when all else has failed.",
     "pos": "noun"
+}, {
+    "en": "loquacious",
+    "tr": "geveze",
+    "def": "tending to talk a great deal; talkative.",
+    "pos": "adjective"
+}, {
+    "en": "mull",
+    "tr": "derin düşünmek",
+    "def": "think about (a fact, proposal, or request) deeply and at length.",
+    "pos": "verb"
+}, {
+    "en": "cannon",
+    "tr": "top",
+    "img": "/assets/images/projects/language-app/cannon.gif",
+    "def": "a large, heavy piece of artillery, typically mounted on wheels, formerly used in warfare.",
+    "pos": "noun"
 }]
