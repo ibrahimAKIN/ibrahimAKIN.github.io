@@ -5334,4 +5334,12 @@
     "img": "/assets/images/projects/language-app/cannon.gif",
     "def": "a large, heavy piece of artillery, typically mounted on wheels, formerly used in warfare.",
     "pos": "noun"
+}, {
+    "en": "linger",
+    "tr": "oyalanmak",
+    "def": "stay in a place longer than necessary because of a reluctance to leave.",
+    "pos": "verb"
+}, {
+    "en": "drill bit",
+    "tr": "matkap ucu"
 }]
