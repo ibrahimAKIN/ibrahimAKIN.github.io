@@ -5342,4 +5342,9 @@
 }, {
     "en": "drill bit",
     "tr": "matkap ucu"
+}, {
+    "en": "hoarder",
+    "tr": "stokçu, istifçi",
+    "def": "a person who hoards things.",
+    "pos": "noun"
 }]
