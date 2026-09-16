@@ -6,7 +6,7 @@ const cbx = { b: document.forms[0][4], c: document.forms[0][3] };
 const elm = { b: document.getElementById('blocked'), c: document.getElementById('checked') };
 const lst = { b: localStorage.getItem(lcl.b)?.split(',') || [], c: localStorage.getItem(lcl.c)?.split(',') || [] };
 const txt = { b: elm.b.children[1], c: elm.c.children[1] };
-const clr = { b: '#f00', c: '#0f0' };
+const clr = { b: '#f00', c: '#0f0', d: '#ff0' };
 let newtab = false, cu = '';   // current user
 
 function display(place, data, type, pre) {
@@ -37,7 +37,8 @@ function display(place, data, type, pre) {
         c.title = lang_obj[current]['check'];
         s.title = lang_obj[current]['search'];
         if (lst.b.includes(item.login)) b.style.color = clr.b;
-        if (lst.c.includes(item.login)) c.style.color = clr.c;
+        else if (lst.c.includes(item.login)) c.style.color = clr.c;
+        else if (place === 'followers' && type === 'dif') a.style.color = clr.d;
         b.innerText = '⨯';
         c.innerText = '✔';
         s.innerText = '.';
